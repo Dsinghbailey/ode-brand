@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Ode with Anthropic — __DOCNAME__</title>
+  <!-- Brand tokens first, then the document component system. -->
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="components.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       PAGE 1 — Cover (full-bleed brand mesh gradient)
+       ============================================================ -->
+  <section class="page page--bleed">
+    <div class="cover">
+      <img class="cover__logo" src="logos/logo-light.svg" alt="Ode with Anthropic" />
+      <div class="cover__body">
+        <div class="cover__eyebrow">Prepared for [Client]</div>
+        <h1 class="cover__title">Document<br/>Title Here</h1>
+        <p class="cover__subtitle">A one-line subtitle that frames what this document is, in plain language.</p>
+      </div>
+      <div class="cover__meta">
+        <div class="cover__meta-block">
+          <div class="cover__meta-label">Prepared by</div>
+          <div class="cover__meta-value">Ode with Anthropic</div>
+        </div>
+        <div class="cover__meta-block">
+          <div class="cover__meta-label">Date</div>
+          <div class="cover__meta-value">Month YYYY</div>
+        </div>
+        <div class="cover__meta-block">
+          <div class="cover__meta-label">Reference</div>
+          <div class="cover__meta-value">DOC-001</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 2 — Contents
+       ============================================================ -->
+  <section class="page">
+    <div class="runner runner--top">
+      <img class="runner__logo" src="logos/logo-dark.svg" alt="" />
+      <div class="runner__rule"></div>
+      <div class="runner__meta">Contents <span class="sep">·</span> <span class="runner__page"></span></div>
+    </div>
+
+    <div class="section__header">
+      <span class="eyebrow">Contents</span>
+      <h2 class="section__title">What's inside</h2>
+    </div>
+
+    <nav class="toc">
+      <a class="toc__entry toc__entry--major" href="#sec-01">
+        <span class="toc__num">01</span>
+        <span class="toc__title">First Section</span>
+        <span class="toc__dots"></span>
+        <span class="toc__page"></span>
+      </a>
+      <a class="toc__entry toc__entry--sub" href="#sec-01-detail">
+        <span class="toc__num">1.1</span>
+        <span class="toc__title">A sub-section</span>
+        <span class="toc__dots"></span>
+        <span class="toc__page"></span>
+      </a>
+      <a class="toc__entry toc__entry--major" href="#sec-02">
+        <span class="toc__num">02</span>
+        <span class="toc__title">Second Section</span>
+        <span class="toc__dots"></span>
+        <span class="toc__page"></span>
+      </a>
+    </nav>
+
+    <div class="runner runner--bottom">
+      <div class="runner__rule"></div>
+      <div class="runner__meta">Ode with Anthropic <span class="sep">·</span> <span class="runner__page"></span></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 3 — Section divider
+       ============================================================ -->
+  <section class="page page--bleed" id="sec-01">
+    <div class="divider">
+      <div class="divider__numeral">01</div>
+      <div class="divider__top">
+        <img class="divider__logo" src="logos/logo-light.svg" alt="" />
+        <div class="divider__eyebrow">Section 01</div>
+      </div>
+      <div class="divider__bottom">
+        <h2 class="divider__title">First Section</h2>
+        <p class="divider__synopsis">One or two sentences setting up what this section argues. The conclusion lives here, in the lede, not in the headline.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 4 — Content: header + prose + callout + cards
+       ============================================================ -->
+  <section class="page">
+    <div class="runner runner--top">
+      <img class="runner__logo" src="logos/logo-dark.svg" alt="" />
+      <div class="runner__rule"></div>
+      <div class="runner__meta">01 First Section <span class="sep">·</span> <span class="runner__page"></span></div>
+    </div>
+
+    <div class="section__header">
+      <span class="eyebrow">First Section</span>
+      <h2 class="section__title">A label, not a pitch</h2>
+      <p class="section__lede">The lede carries the conclusion in plain language. Vary sentence length. Be specific. Use "is" and "are" freely.</p>
+    </div>
+
+    <div class="prose">
+      <p>Body prose in ABC Diatype at print size. Compress to the load-bearing claim: if a reason fits in one sentence, do not make it three paragraphs.</p>
+    </div>
+
+    <div class="callout">
+      <div class="callout__label">A note on scope</div>
+      <div class="callout__body">Sidebar content (alternatives considered, operating precedent, boundaries) belongs in a callout, signaling "read if interested" and keeping the main flow on the decision itself.</div>
+    </div>
+
+    <h3 class="subhead" id="sec-01-detail"><span class="subhead__num">1.1</span> Three supporting points</h3>
+    <div class="three-up">
+      <div class="card card--accent-tomato">
+        <div class="card__num">01</div>
+        <div class="card__title">First point</div>
+        <div class="card__body">A short, concrete claim with enough detail to stand on its own.</div>
+      </div>
+      <div class="card card--accent-bluegray">
+        <div class="card__num">02</div>
+        <div class="card__title">Second point</div>
+        <div class="card__body">A short, concrete claim with enough detail to stand on its own.</div>
+      </div>
+      <div class="card card--accent-teal">
+        <div class="card__num">03</div>
+        <div class="card__title">Third point</div>
+        <div class="card__body">A short, concrete claim with enough detail to stand on its own.</div>
+      </div>
+    </div>
+
+    <div class="runner runner--bottom">
+      <div class="runner__rule"></div>
+      <div class="runner__meta">Ode with Anthropic <span class="sep">·</span> <span class="runner__page"></span></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 5 — Content: stat strip + thesis + numlist
+       ============================================================ -->
+  <section class="page" id="sec-02">
+    <div class="runner runner--top">
+      <img class="runner__logo" src="logos/logo-dark.svg" alt="" />
+      <div class="runner__rule"></div>
+      <div class="runner__meta">02 Second Section <span class="sep">·</span> <span class="runner__page"></span></div>
+    </div>
+
+    <div class="section__header section__header--compact">
+      <span class="eyebrow">Second Section</span>
+      <h2 class="section__title section__title--md">Numbers and structure</h2>
+    </div>
+
+    <div class="stat-strip">
+      <div class="stat"><div class="stat__value">40<span class="unit">%</span></div><div class="stat__label">A metric</div></div>
+      <div class="stat"><div class="stat__value">3<span class="unit">x</span></div><div class="stat__label">A multiplier</div></div>
+      <div class="stat"><div class="stat__value">12</div><div class="stat__label">A count</div></div>
+      <div class="stat"><div class="stat__value">99<span class="unit">%</span></div><div class="stat__label">A rate</div></div>
+    </div>
+
+    <div class="thesis">
+      <div class="thesis__label">Central thesis</div>
+      <p class="thesis__text">The one statement this document exists to make, set apart between hairline rules. Not a quotation.</p>
+    </div>
+
+    <div class="numlist numlist--compact">
+      <div class="numlist__item">
+        <div class="numlist__num">1</div>
+        <div class="numlist__body">
+          <div class="numlist__title">First item</div>
+          <div class="numlist__text">A display list for ordered, weighty points.</div>
+        </div>
+      </div>
+      <div class="numlist__item">
+        <div class="numlist__num">2</div>
+        <div class="numlist__body">
+          <div class="numlist__title">Second item</div>
+          <div class="numlist__text">Each row pairs a large blue numeral with a titled body.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="runner runner--bottom">
+      <div class="runner__rule"></div>
+      <div class="runner__meta">Ode with Anthropic <span class="sep">·</span> <span class="runner__page"></span></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 6 — Back / closing (full-bleed)
+       ============================================================ -->
+  <section class="page page--bleed">
+    <div class="divider">
+      <div class="divider__top">
+        <img class="divider__logo" src="logos/logo-light.svg" alt="Ode with Anthropic" />
+      </div>
+      <div class="divider__bottom">
+        <h2 class="divider__title">Thank you.</h2>
+        <p class="divider__synopsis">Contact line, next step, or sign-off. yourdomain.com</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Self-numbering: fills .runner__page and .toc__page at load time. -->
+  <script src="paginate.js"></script>
+</body>
+</html>

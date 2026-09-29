@@ -1,0 +1,10 @@
+{
+  "name": "ode-brand",
+  "description": "The Ode with Anthropic brand system: the brand foundation (palette, typography, logo usage, voice, design principles, and the licensed font and logo asset files) plus the two artifact engines that build on it, ode-pdf for print-quality HTML-to-PDF documents and ode-slides for editable .pptx decks. Use when an artifact needs to be on-brand, or when asked for brand colors, the Ode palette, an on-brand doc, deck, or app UI. (Ode is the new name for the team formerly branded Fractional AI.)",
+  "author": {
+    "name": "Sherif Nada",
+    "email": "sherif@fractional.ai",
+    "url": "https://www.fractional.ai/"
+  },
+  "license": "UNLICENSED"
+}

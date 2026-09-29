@@ -1,0 +1,120 @@
+/* ============================================================
+   Ode with Anthropic — brand tokens
+   The single source of truth for color and type.
+   Every Ode artifact (docs, slides, app UIs) imports this.
+   Color + font values come from the Ode Brand Hub.
+   Do not hardcode a hex or font name downstream; reference a var.
+   ------------------------------------------------------------
+   Fonts: all bundled in fonts/ as .otf + .woff2 and wired into the
+   @font-face rules below — ABC Diatype (Regular + Semi Mono, the
+   primary) and Styrene A (Medium cut, the secondary). Helvetica Neue
+   stays in every stack only as a last-resort safety net (Ode's
+   sanctioned substitute), never the intended face.
+   These are licensed commercial fonts — see fonts/README.md.
+   ============================================================ */
+
+/* The brand ships ABC Diatype as Regular only (woff2 for the web/PDF engine,
+   otf for desktop install). Heavier heading weights are synthesized from 400 by
+   the renderer until the licensed Medium/Bold cuts are added here. */
+@font-face {
+  font-family: 'ABC Diatype';
+  src: url('fonts/ABCDiatype-Regular.woff2') format('woff2'),
+       url('fonts/ABCDiatype-Regular.otf') format('opentype');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ABC Diatype Mono';
+  src: url('fonts/ABCDiatypeSemiMono-Regular.woff2') format('woff2'),
+       url('fonts/ABCDiatypeSemiMono-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* Styrene A (secondary). Only the Medium cut is provided, so it is mapped across
+   the weight range — any secondary-face text renders in Styrene A Medium rather
+   than falling back. */
+@font-face {
+  font-family: 'Styrene A';
+  src: url('fonts/StyreneA-Medium-Web.woff2') format('woff2'),
+       url('fonts/StyreneA-Medium.otf') format('opentype');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* --- Foundation -------------------------------------------------- */
+  --bistre: #201D1C;              /* foundation dark / primary text   */
+  --bistre-90: rgba(32, 29, 28, 0.92);
+  --bistre-80: rgba(32, 29, 28, 0.82);
+  --bistre-70: rgba(32, 29, 28, 0.70);
+  --bistre-55: rgba(32, 29, 28, 0.55);
+  --bistre-40: rgba(32, 29, 28, 0.40);
+  --bistre-20: rgba(32, 29, 28, 0.20);
+  --bistre-10: rgba(32, 29, 28, 0.10);
+  --bistre-06: rgba(32, 29, 28, 0.06);
+
+  --bone: #FBFBF8;               /* foundation light                 */
+  --bone-warm: #F4F3EE;          /* slightly dimmed page background   */
+  --white: #ffffff;
+
+  /* --- Neutrals ---------------------------------------------------- */
+  --cola: #3C2E2A;               /* warm secondary dark (grounds)     */
+  --dove: #625855;               /* warm gray, muted / secondary text */
+  --slate: #D9D9D9;              /* light gray, dividers / fills      */
+
+  /* --- Brand color ------------------------------------------------- */
+  --tomato: #CD3E1D;             /* primary accent, links, emphasis   */
+  --tomato-80: rgba(205, 62, 29, 0.80);
+  --blue-gray: #728FA8;          /* secondary, supporting UI          */
+  --teal: #5EA6B1;               /* expressive accent (a.k.a. Pale Gray in the hub) */
+
+  /* --- Soft tints (panels, cards, highlights) ---------------------- */
+  --tea: #E8EBD7;                /* pale green tint                   */
+  --lilac: #F4DCEA;              /* pale pink tint                    */
+
+  /* Hairlines */
+  --rule: rgba(32, 29, 28, 0.10);
+  --rule-strong: rgba(32, 29, 28, 0.22);
+  --rule-light: rgba(255, 255, 255, 0.18);
+
+  /* --- Grounds ----------------------------------------------------- */
+  /* Ode's identity is flat and editorial — the Brand Hub defines no    */
+  /* mesh gradients. Covers/dividers use solid warm-dark grounds with a */
+  /* single accent, not sweeping color washes. These "gradients" are    */
+  /* deliberately near-solid Bistre→Cola so dark panels read as one     */
+  /* considered surface, never a tech-y gradient. Keep them restrained. */
+  --grad-brand: linear-gradient(150deg, #2A2422 0%, #201D1C 55%, #171413 100%);
+  --grad-cool: linear-gradient(150deg, #2E2A28 0%, #201D1C 100%);
+  --grad-warm: linear-gradient(150deg, #3C2E2A 0%, #241C1A 70%, #201D1C 100%);
+  --grad-hero: radial-gradient(circle at 82% 14%, rgba(205, 62, 29, 0.14) 0%, transparent 46%),
+               radial-gradient(circle at 12% 88%, rgba(94, 166, 177, 0.10) 0%, transparent 44%),
+               linear-gradient(160deg, #2A2422 0%, #201D1C 60%, #171413 100%);
+  --grad-divider: radial-gradient(circle at 88% 20%, rgba(205, 62, 29, 0.12) 0%, transparent 42%),
+                  linear-gradient(150deg, #3C2E2A 0%, #241C1A 72%, #201D1C 100%);
+
+  /* --- Type -------------------------------------------------------- */
+  /* ABC Diatype for display AND body (per the Brand Hub). ABC Diatype  */
+  /* Semi Mono is the accent/texture face; Styrene is the secondary.    */
+  /* Helvetica Neue is the sanctioned fallback (used on Google, where    */
+  /* the licensed fonts are unavailable), so keep the fallback stack.    */
+  --font-display: 'ABC Diatype', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'ABC Diatype', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'ABC Diatype Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --font-secondary: 'Styrene A', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* --- Base element styles ------------------------------------------------
+   Browsers and print engines default code/kbd/samp/pre to their OWN monospace
+   family, which bypasses --font-mono entirely: the token is never consulted, so
+   inline code renders in Menlo or SF Mono instead of ABC Diatype Semi Mono. It
+   fails quietly (mono still looks like mono) and surfaces only in a font audit,
+   so map the elements back here rather than asking every downstream artifact to
+   remember. Caught by pdffonts on a generated deck, which embedded Menlo.
+   The size step keeps Semi Mono from out-measuring the body text around it. */
+code, kbd, samp, pre {
+  font-family: var(--font-mono);
+  font-size: 0.94em;
+}

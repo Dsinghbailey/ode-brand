@@ -1,0 +1,15 @@
+{
+  "name": "ode-doc-build",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Render a Ode designed document (HTML) to PDF via Puppeteer.",
+  "scripts": {
+    "build": "node build.mjs",
+    "watch": "node watch.mjs"
+  },
+  "dependencies": {
+    "chokidar": "^5.0.0",
+    "puppeteer": "^25.0.4"
+  }
+}
